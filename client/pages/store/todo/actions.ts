@@ -1,4 +1,4 @@
-import { FETCH_TODO_REQUEST, FETCH_TODO_SUCCESS ,ADD_TODO,DELETE_TODO} from "./constants";
+import { FETCH_TODO_REQUEST, FETCH_TODO_SUCCESS ,ADD_TODO,DELETE_TODO,UPDATE_TODO,GET_TODO} from "./constants";
 import {
   FetchTodoRequest,
   FetchTodoSuccess,
@@ -24,12 +24,8 @@ export const deleteList = id => ({
   payload: { id }
 });
 
-export const updateList = id => ({
-  type: UPDATE_TODO,
-  payload: { id ,name}
+export const getList = todo => ({
+  type: GET_TODO,
+  payload:todo,
 });
 
-export const getList = id => ({
-  type: GET_TODO,
-  payload: { id }
-});

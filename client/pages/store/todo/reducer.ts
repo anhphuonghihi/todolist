@@ -6,7 +6,7 @@ const initialState: TodoState = {
   pending: false,
   todos: [],
   error: null,
-  _id: null
+  getId: null
 };
 
 // eslint-disable-next-line import/no-anonymous-default-export
@@ -38,20 +38,9 @@ export default (state = initialState, action: TodoActions) => {
               todos: [...newTodo]    
         };
         case GET_TODO:
-          console.log("reducer GET_EDIT_LIST_ID", action.payload.id);
           return {
             ...state,
-            editId: action.payload.id
-          };
-        case UPDATE_TODO:
-          const newLists = state.lists.map(item =>
-            item.id === action.payload.list.id ? action.payload.list : item
-          );
-          console.log("reducer EDIT_LIST_SUCCESS", newLists);
-          return {
-            ...state,
-            lists: [...newLists],
-            editId: null
+            getOne:action.payload
           };
     default:
       return {

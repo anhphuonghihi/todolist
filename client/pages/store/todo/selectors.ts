@@ -8,6 +8,7 @@ const getTodos = (state: AppState) => state.todo.todos;
 
 const getError = (state: AppState) => state.todo.error;
 
+
 export const getTodosSelector = createSelector(getTodos, (todos) => todos);
 
 export const getPendingSelector = createSelector(
