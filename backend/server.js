@@ -3,6 +3,8 @@ const app = express();
 require("dotenv").config();
 const port = process.env.PORT || 5000;
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.get("/", (req, res) => {
   res.send("hello from simple server :)");
 });
@@ -10,6 +12,8 @@ app.get("/", (req, res) => {
 app.listen(port, () =>
   console.log("> Server is up and running on port : " + port)
 );
+const todo = require("./routers/todo");
+app.use("/todo", todo);
 
 const colors = require("colors");
 const mongoose = require("mongoose");
