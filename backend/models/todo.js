@@ -5,11 +5,14 @@ var todoSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    completed :{
+      type: Boolean,
+      default: false
+    },
   },
   {
     timestamps: true,
   }
 );
 
-//Export the model
 module.exports = mongoose.model("Todo", todoSchema);

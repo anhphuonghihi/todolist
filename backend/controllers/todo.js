@@ -10,9 +10,9 @@ const todo = {
   },
   createTodo: async (req, res) => {
     try {
-      const { name, post } = req.body;
+      const { name, completed } = req.body;
       const newNote = new Todo({
-        name,
+        name,completed
       });
       //   res.json({newNote})
       await newNote.save();
